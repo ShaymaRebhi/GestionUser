@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { HeadComponent } from './head/head.component';
 import { ContentComponent } from './content/content.component';
 import { ListUserComponent } from './list-user/list-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainUserComponent } from './main-user/main-user.component';
 import { MainProductComponent } from './main-product/main-product.component';
 import { MainProviderComponent } from './main-provider/main-provider.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -31,12 +32,14 @@ import { FormAddUserComponent } from './form-add-user/form-add-user.component';
     MainProviderComponent,
     NotFoundComponent,
     FormAddUserComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent ]

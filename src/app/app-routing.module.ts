@@ -7,6 +7,7 @@ import { Routes ,RouterModule } from '@angular/router';
 import { ContentComponent } from './content/content.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
+import { LoginComponent } from './login/login.component';
 
 
 const ROUTES: Routes = [
@@ -18,6 +19,7 @@ const ROUTES: Routes = [
   {path :'', component:ContentComponent},
   {path :'category', component:ListUserComponent},
   {path :'subscribe', component:FormAddUserComponent},
+  {path :'login', component:LoginComponent},
   {path :'**', component:NotFoundComponent}
 ];
 @NgModule({

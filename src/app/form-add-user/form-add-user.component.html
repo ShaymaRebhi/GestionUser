@@ -21,12 +21,12 @@
             <div *ngIf="fl.hasError('minlength')">Last name minlength is equal to 3 </div>
             <div *ngIf="fl.hasError('pattern')">error msg pattern </div>
         </div>
+        <label>Picture</label>
+        <input type="text" name="picture" class="form-control" [(ngModel)]="user.picture">
+        <br>
         <label>Birth date</label>
         <input type="date" name="birthDate" class="form-control"  [(ngModel)]="user.birthDate" required #fd="ngModel" />
-          <script>
-            const input = document.querySelector('input');
-              input.valueAsDate = new Date();
-          </script>
+          
           <br>
           <div class="alert alert-danger" *ngIf="fd.invalid && fd.touched ">
             <div *ngIf="fd.hasError('required')">Birth date is required</div>
@@ -59,15 +59,7 @@
             <div *ngIf="fpr.hasError('pattern')">error msg pattern </div>
         </div>
         <br>
-        <label>Customer category</label>
-        <input type ="text" placeholder="Customer" name="accountCategory"  class="form-control"  [(ngModel)]="user.accountCategory"
-         required  pattern="[cC]+ustomer" #fc="ngModel">
-         
-         <br>
-         <div class="alert alert-danger" *ngIf="fc.invalid && fc.touched ">
-            <div *ngIf="fc.hasError('required')">Customer category is required</div>
-            <div *ngIf="fc.hasError('pattern')">Only Customer category is accepted </div>
-        </div>
+       
     <br>
     <button class="btn btn-outline-success" (click)="save()" 
     [disabled]="f.invalid" >
