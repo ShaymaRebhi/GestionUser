@@ -1,1 +1,19 @@
-<img src="assets/under-construction.jpg">
+ <h1> List of product ! </h1>
+ <br>
+ <a href="#">Best seller </a>
+ <div class="row">
+     <div class ="col-md-3" *ngFor="let product of listProduct">
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.picture}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text"> {{product.description}}</p>
+              <button class="btn btn-primary" Like (click)="like(product)">{{product.nbrLike}} Like  </button>
+              &nbsp;
+              <button  class="btn btn-warning" style="float: right;" [disabled]="product.quantity == 0">Buy product </button>
+            </div>
+          </div>
+
+ </div>
+
+</div>
