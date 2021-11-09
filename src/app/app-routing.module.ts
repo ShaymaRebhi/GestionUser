@@ -8,6 +8,7 @@ import { ContentComponent } from './content/content.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
 import { LoginComponent } from './login/login.component';
+import { FormAddProductComponent } from './form-add-product/form-add-product.component';
 
 
 const ROUTES: Routes = [
@@ -20,6 +21,7 @@ const ROUTES: Routes = [
   {path :'category', component:ListUserComponent},
   {path :'subscribe', component:FormAddUserComponent},
   {path :'login', component:LoginComponent},
+  {path :'addProduct', component:FormAddProductComponent},
   {path :'**', component:NotFoundComponent}
 ];
 @NgModule({

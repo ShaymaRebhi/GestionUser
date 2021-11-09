@@ -1,19 +1,14 @@
- <h1> List of product ! </h1>
  <br>
- <a href="#">Best seller </a>
+ <button class="btn btn-outline-primary" (click)="showForm()">Add new Product</button>
+ <div *ngIf="showFormTemplate">
+ <app-form-add-product  (addEvent)="save($event)"></app-form-add-product>
+  <h1> List of product ! </h1>
+  <a href="#">Best seller </a>
  <div class="row">
-     <div class ="col-md-3" *ngFor="let product of listProduct">
-        <div class="card" style="width: 18rem;">
-            <img src="{{product.picture}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{product.title}}</h5>
-              <p class="card-text"> {{product.description}}</p>
-              <button class="btn btn-primary" Like (click)="like(product)">{{product.nbrLike}} Like  </button>
-              &nbsp;
-              <button  class="btn btn-warning" style="float: right;" [disabled]="product.quantity == 0">Buy product </button>
-            </div>
-          </div>
-
+     <app-product *ngFor="let currentProduct of listProduct"
+     [product]="currentProduct"
+      (notification)="like($event)"
+      (deleteNotifEvent)="delete($event)" class="col-md-3">
+        </app-product>
  </div>
-
-</div>
+ </div>

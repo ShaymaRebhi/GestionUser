@@ -8,43 +8,66 @@ import { product } from '../model/product';
 })
 export class MainProductComponent implements OnInit {
 listProduct : product[];
+showFormTemplate: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
     this.listProduct = [
-      {
-        id: 12,
-        title: 'T-shirt 1',
-        description: 'Lorem ipsum donf fkdhba kdjfu',
+      { id: 12,
+        title: 'T-Shirt 1',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
         quantity: 10,
-        prix: 5,
-        picture: 'https://seagale.fr/1148-large_default/linen-t-shirt.jpg',
-        nbrLike:15 
+        prix: 15,
+        nbrLike: 0,
+        picture: 'assets/t shirt 1.jpg'
       },
-      {
-        id: 13,
-        title: 'T-shirt 2',
-        description: 'Lorem ipsum donf fkdhba kdjfu',
+      { id: 12,
+        title: 'T-Shirt 2',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
         quantity: 10,
-        prix: 5,
-        picture: 'http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43bf75.png',
-        nbrLike:15 
+        prix: 25,
+        nbrLike: 0,
+        picture: 'assets/t shirt 2.jpg'
       },
-      {
-        id: 14,
-        title: 'T-shirt 3',
-        description: 'Blue  T-shirt',
-        quantity: 5,
-        prix: 5,
-        picture: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVz0gEPE4KIM6d_zceKdAAKPpfrA1RiFyhfEtnMrCzE5sGiE31JySPmRD6LbSq4H5_EzI&usqp=CAU',
-        nbrLike:15 
+      { id: 12,
+        title: 'T-Shirt 3',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
+        quantity: 0,
+        prix: 100,
+        nbrLike: 0,
+        picture: 'assets/t shirt 1.jpg'
+      },
+      { id: 12,
+        title: 'T-Shirt 4',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
+        quantity: 100,
+        prix: 25,
+        nbrLike: 5,
+        picture: 'assets/t shirt 2.jpg'
       }
-      
     ]
   }
   like(product:product){
-    product.nbrLike++;
+    let i = this.listProduct.indexOf(product);
+    this.listProduct[i].nbrLike++
     console.log(this.listProduct)
-  }
+    }
+
+    save(product: product){
+      this.listProduct.push(product);
+      this.showFormTemplate = false
+
+    }
+
+    showForm(){
+      this.showFormTemplate = !this.showFormTemplate;
+      return this.showFormTemplate
+    }
+    delete(product:product){
+      let i = this.listProduct.indexOf(product);
+      this.listProduct.splice(i,1);
+    }
+
 
 }

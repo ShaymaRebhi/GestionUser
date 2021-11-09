@@ -13,6 +13,8 @@ import { MainProviderComponent } from './main-provider/main-provider.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
 import { LoginComponent } from './login/login.component';
+import { ProductComponent } from './product/product.component';
+import { FormAddProductComponent } from './form-add-product/form-add-product.component';
 
 
 
@@ -33,6 +35,8 @@ import { LoginComponent } from './login/login.component';
     NotFoundComponent,
     FormAddUserComponent,
     LoginComponent,
+    ProductComponent,
+    FormAddProductComponent,
   ],
   imports: [
     BrowserModule,
