@@ -50,8 +50,8 @@ list:User[]=[
     password: "test",
     picture: "https://bootdey.com/img/Content/avatar/avatar4.png",
     profession: "Software Engineer"
-    
-    
+
+
     },
     {
     idUser: 5,
@@ -65,7 +65,16 @@ list:User[]=[
     profession: "Software Engineer"
     },
 ];
-  constructor() { 
-   
+  constructor() {
+
+  }
+  getUserByCategory(accountCategory:string) {
+    let nb = 0;
+    for (let i = 0; i < this.list.length; i++) {
+      if (this.list[i].accountCategory == accountCategory) {
+        nb++;
+      }
+    }
+    return this.list;
   }
 }

@@ -12,12 +12,12 @@ export class ListUserComponent implements OnInit {
     allUser : User[];
     list:User[];
     inputCategory:string;
-  constructor(private route : ActivatedRoute, private data:SharedDataService) { }
+  constructor(private service:SharedDataService,private route : ActivatedRoute, private data:SharedDataService) { }
 
   ngOnInit(): void {
     this.allUser=this.data.list;
     this.route.paramMap.subscribe(
-      (params:ParamMap)=> 
+      (params:ParamMap)=>
       {let category =params.get('category')
       this.list=this.allUser.filter(user=>user.accountCategory === category)
     });
@@ -29,8 +29,11 @@ export class ListUserComponent implements OnInit {
   }
   getColor(user:User){
     // if(user.accountCategory=='Admin')
-    // return 'red' 
+    // return 'red'
+
 
   }
-
+  getUserByCategory(accountCategory:string){
+  this.list=this.service.getUserByCategory(accountCategory)
+  }
 }
